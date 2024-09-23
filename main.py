@@ -37,9 +37,10 @@ for n in range(minimum_len):
 
 with open("date_data.csv", "w", newline='') as csvfile:
     csv_writer = csv.writer(csvfile)
-    csv_writer.writerow(["Date", "Data"])  # Write header
-    for entry in date_data_array:
-        csv_writer.writerow([entry[0].strftime('%Y-%m-%d'), entry[1]])  
+    csv_writer.writerow(["Date", "         HH,   DD,   FH,   FF,   FX,    T, T10N,   TD,   SQ,    Q,   DR,   RH,    P,   VV,    N,    U,   WW,   IX,    M,    R,    S,    O,    Y"])
+
+    for k in date_data_array:
+        csv_writer.writerow([k[0].strftime('%Y-%m-%d'), k[1]])  
 
 print(date_data_array)
 
