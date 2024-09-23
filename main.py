@@ -1,6 +1,8 @@
 
 import re
 from datetime import datetime
+import matplotlib.pyplot as plt
+
 
 fileArray = []
 dateArr = []
