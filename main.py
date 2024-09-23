@@ -22,8 +22,16 @@ for i in range(len(fileArray)):
        dateArr.append(date)
        fileArray[i] = re.sub(r"^260,\d{8},", "", fileArray[i])
 
-
 trueDates = [datetime.strptime(date, "%Y%m%d" ) for date in dateArr]
-print(trueDates)
+
+date_data_array = []
+minimum_len  = min(len(fileArray), len(trueDates))
+
+for n in range(minimum_len):
+   
+   date_data_array.append([trueDates[n], fileArray[n]])
+   
+
+print(date_data_array)
 #print(datarr)
 
