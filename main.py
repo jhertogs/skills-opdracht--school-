@@ -34,6 +34,6 @@ for n in range(minimum_len):
    date_data_array.append([trueDates[n], fileArray[n]])
    
 
-print(date_data_array)
+
 #print(datarr)
 
