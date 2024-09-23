@@ -18,9 +18,10 @@ for i in range(len(fileArray)):
     if match:
        date = match.group(1)
        datarr.append(date)
+       fileArray[i] = re.sub(r"^260,\d{8},", "", fileArray[i])
 
-#for i in range(len(fileArray)):
+#date_objects = [datetime.strptime(date, "%d %b %Y") for date in dates] example im going to plagiarize from myself (earlierr project)
 
-#print(fileArray)
-print(datarr)
+print(fileArray)
+#print(datarr)
 
