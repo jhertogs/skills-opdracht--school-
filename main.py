@@ -1,7 +1,7 @@
 
 import re
 fileArray = []
-pattern = "^\d{4}-\d{2}-\d{2}$" # regex for YYYY-MM-DD https://blog.finxter.com/regex-match-dates/ not my code lol, im too stupid for regex
+pattern = "^260,\d{4}-\d{2}-\d{2}$" # regex for YYYY-MM-DD https://blog.finxter.com/regex-match-dates/ not my code lol, im too stupid for regex
 
 
 with open("knmi.txt") as file:
@@ -14,5 +14,5 @@ with open("knmi.txt") as file:
    
 
 
-if re.match(pattern, )
+
 print(fileArray)
