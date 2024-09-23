@@ -1,8 +1,10 @@
 
 import re
+from datetime import datetime
+
 fileArray = []
-datarr = []
-pattern = r"^260,(\d{8})" # regex for YYYY-MM-DD https://blog.finxter.com/regex-match-dates/ not my code lol, im too stupid for regex
+dateArr = []
+pattern = r"^260,(\d{8})" # regex for YYYYMMDD https://blog.finxter.com/regex-match-dates/ not my code lol, im too stupid for regex
 
 
 with open("knmi.txt") as file:
@@ -17,11 +19,11 @@ for i in range(len(fileArray)):
     match = re.match(pattern, fileArray[i])
     if match:
        date = match.group(1)
-       datarr.append(date)
+       dateArr.append(date)
        fileArray[i] = re.sub(r"^260,\d{8},", "", fileArray[i])
 
-#date_objects = [datetime.strptime(date, "%d %b %Y") for date in dates] example im going to plagiarize from myself (earlierr project)
 
-print(fileArray)
+trueDates = [datetime.strptime(date, "%Y%m%d" ) for date in dateArr]
+print(trueDates)
 #print(datarr)
 
