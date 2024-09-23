@@ -3,10 +3,12 @@ import re
 from datetime import datetime
 import csv
 
+#code just stores all the "relevant data" in an csv file
+
 fileArray = []
 dateArr = []
 date_data_array = []
-pattern = r"^260,(\d{8})" # regex for YYYYMMDD https://blog.finxter.com/regex-match-dates/ not my code lol, im too stupid for regex
+pattern = r"^260,(\d{8})"
 
 
 with open("knmi.txt") as file:
@@ -40,4 +42,3 @@ with open("date_data.csv", "w", newline='') as csvfile:
         csv_writer.writerow([k[0].strftime('%Y-%m-%d'), k[1]])  
 
 print(date_data_array)
-
