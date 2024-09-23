@@ -1,7 +1,8 @@
 
 import re
 from datetime import datetime
-import matplotlib.pyplot as plt
+import csv
+
 
 
 fileArray = []
@@ -34,6 +35,11 @@ for n in range(minimum_len):
    date_data_array.append([trueDates[n], fileArray[n]])
    
 
+with open("date_data.csv", "w", newline='') as csvfile:
+    csv_writer = csv.writer(csvfile)
+    csv_writer.writerow(["Date", "Data"])  # Write header
+    for entry in date_data_array:
+        csv_writer.writerow([entry[0].strftime('%Y-%m-%d'), entry[1]])  
 
-#print(datarr)
+print(date_data_array)
 
